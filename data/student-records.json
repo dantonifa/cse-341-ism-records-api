@@ -1,0 +1,16 @@
+[
+  {
+    "studentId": "1328200200115",
+    "name": "Cristina Hernandez Guillen",
+    "course": "Biología",
+    "grades": {
+      "parcial1": 89,
+      "parcial2": 89,
+      "parcial3": 89,
+      "parcial4": 89
+    },
+    "grado": "Décimo",
+    "seccion": "1",
+    "year": 2023
+  }
+]

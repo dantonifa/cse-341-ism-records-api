@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>David Antonio Fajardo Ponce - WDD 231 - Web Frontend Development I</title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="David Antonio Fajardo Ponce - WDD 231 - Web Frontend Development I">
+    <meta property="og:type" content="website">
+    <!--Provide an property="og:image" content value that is an absolute URL that is located in the repository.-->
+    <meta property="og:image" content="https://dantonifa.github.io/wdd231/final_project/images/ism-logo.webp">
+    <!-- og description -->
+    <meta property="og:description" content="WDD 231 - Web Frontend Development, David Antonio Fajardo Ponce,
+                        course assignment portal">
+    <!-- Provide an property="og:url" content value that is an absolute URL. -->
+    <meta property="og:url" content="https://dantonifa.github.io/wdd231/final_project/discover.html">
+    <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
+    <meta name="author" content="David Antonio Fajardo">
+    <link rel="stylesheet" href="styles/discover-large.css">
+    <link rel="stylesheet" href="styles/discover-mobile.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/project.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <img id="ism-logo" src="images/ism-logo.webp" alt="Instituto Privado Salvador Moncada Logo">
+        <h1>
+           INSTITUTO PRIVADO SALVADOR MONCADA
+        </h1>
+        <button type="button" id="menu" title="Menu"></button>
+        <nav id="nav-container">
+            <ul>
+            <li><a href="./webpage-project.html">HOME</a></li>
+            <li><a href="./discover.html">DISCOVER</a></li>
+            <li><a href="./register.html">REGISTER</a></li>
+            <li><a href="./records.html">RECORDS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>
+            Some activities we do in the High School Salvador Moncada
+        </h2>
+
+        <section class="card-1">
+            <div id="card-1-text">
+                <h2>
+                    Science
+                </h2>
+                <p>Students perform experiments, using the microscope to discover the
+                    microscopic living creatures. 
+                </p>
+            </div>
+            <picture id="science">
+                <img src="images/ism-microscope.webp" alt="Science">
+            </picture>
+        </section>
+        <section class="card-2">
+            <div id="card-2-text">
+                <h2>
+                    Patriotism and Arts
+                </h2>
+                <p>We celebrate the Independence Day by marching with the Honduras
+                    flag, accompany by the martial band.
+                </p>
+            </div>
+            <picture id="Independence-day">
+                <img src="images/ism-independence-day.webp" alt="Science">
+            </picture>
+        </section>
+        <section class="card-3">
+            <div id="card-3-text">
+                <h2>
+                    Pickling Industry
+                </h2>
+                <p>Students are taught how to preserve vegetables, by pickling them;
+                    also, they make jam, with tropical fruits like pineapples, mangoes,
+                    and guava. 
+                </p>
+            </div>
+            <picture id="pickling">
+                <img src="images/ism-pickling.webp" alt="Science">
+            </picture>
+        </section>
+        <section class="card-4">
+            <h2>Book Search (Open Library)</h2>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Enter a science topic (e.g., biology, physics)">
+                <button type="button" id="search-button">Search</button>
+            </div>
+            <div id="results-container"></div>
+            <!-- Search results will be displayed here -->
+        </section>
+    </main>
+    <footer>
+        <div id="flag-container">
+            <div id="text">
+                <p>
+                    &copy;<span id="currentyear"></span> | David Antonio Fajardo Ponce | Honduras            
+                </p>            
+            </div>                        
+            <div id="flag">                        
+                <img src ="images/Honduras_flag.webp" alt ="Honduras Flag">            
+            </div>
+        </div>
+        <div id="social_media">
+            <!-- Facebook link -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page">
+                <img src="images/facebook_icon.svg" alt="Facebook">
+            </a>
+            <!-- YouTube link -->
+            <a href="https://youtu.be/eYJzbcT9A8A" target="_blank" rel="noopener noreferrer" title="Visit our YouTube channel">
+                <img src="images/youtube_icon.svg" alt="YouTube">
+            </a>
+            <!-- LinkedIn link -->
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page">
+                <img src="images/linkedin_icon.svg" alt="David Fajardo LinkedIn">
+            </a>
+        </div>
+        <div id="update">
+            <!---Last modified date--->
+            <div class="last_modified">
+                    <p>
+                    Last Modified: <span id="lastModified"></span>
+                    </p>
+            </div>
+            <!---Number of registered users-->
+            <div class="review_count">
+                <p>
+                    Number of registered users: <span id="review-count">0</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

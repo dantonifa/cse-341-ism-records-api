@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta property="og:title" content="David Antonio Fajardo - WDD 231 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <!--Provide an property="og:image" content value that is an absolute URL that is located in the repository.-->
+    <meta property="og:image" content="https://dantonifa.github.io/wdd231/final_project/images/ism-logo.webp">
+    <!-- og description -->
+    <meta property="og:description" content="WDD 231 - Web Frontend Development, David Antonio Fajardo,
+                        course assignment portal">
+    <!-- Provide an property="og:url" content value that is an absolute URL. -->
+    <meta property="og:url" content="https://dantonifa.github.io/wdd231/final_project/webpage-project.html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 231 - Web Frontend Development I- Final Project: Instituto Salvador Moncada</title>
+    <meta name="description" content="WDD 231: Web Frontend Development I-David Antonio Fajardo, course assignment portal">
+    <meta name="author" content="David Antonio Fajardo">
+    <meta name="Student name" content="David Antonio Fajardo Ponce">
+    <link rel="icon" href="/final_project/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/register-large.css">
+    <link rel="stylesheet" href="styles/register-mobile.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <img id="ism-logo" src="images/ism-logo.webp" alt="Instituto Privado Salvador Moncada Logo">
+        <h1>
+           INSTITUTO PRIVADO SALVADOR MONCADA
+        </h1>
+        <button type="button" id="menu" title="Menu"></button>
+        <nav id="nav-container">
+            <ul>
+            <li><a href="./webpage-project.html">HOME</a></li>
+            <li><a href="./discover.html">DISCOVER</a></li>
+            <li><a href="./register.html">REGISTER</a></li>
+            <li><a href="./records.html">RECORDS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="get" action="thanks.html">
+            <div id="formmessage">
+	            <h1>Contact us!</h1>
+                <p class="smaller">*️⃣ Indicates a required field</p>
+            </div>
+
+            <label for="first-name" class="req">First name</label>
+            <input type="text" id="first-name" name="first name" title="Enter your first name" required 
+            placeholder="Please enter your first name"/>
+            
+            <label for="last-name" class="req">Last name</label>
+            <input type="text" id="last-name" name="last name" title="Enter your last name" required 
+            placeholder="Please enter your last name"/>
+            
+            <label for="email" class="req">Email Address</label>
+            <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@\."
+             placeholder="Please use your email address">
+
+            <label for="mobile" class="req">Mobile</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Please enter your mobile number">
+
+            <label  for="grade" class="req">Grade</label>
+            <select id="grade" name="grade" required>
+            <option value="" disabled selected>Select your grade</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            </select>
+
+            <label for="submit">Register</label>
+            <input type="submit" id="submit" name="submit" value="Register">
+        </form>
+    </main>
+    <footer>
+        <div id="flag-container">
+            <div id="text">
+                <p>
+                    &copy;<span id="currentyear"></span> | David Antonio Fajardo Ponce | Honduras            
+                </p>            
+            </div>                        
+            <div id="flag">                        
+                <img src ="images/Honduras_flag.webp" alt ="Honduras Flag">            
+            </div>
+        </div>
+        <div id="social_media">
+            <!-- Facebook link -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page">
+                <img src="images/facebook_icon.svg" alt="Facebook">
+            </a>
+            <!-- YouTube link -->
+            <a href="https://www.youtube.com/watch?v=eYJzbcT9A8A" target="_blank" rel="noopener noreferrer" title="Visit our YouTube channel">
+                <img src="images/youtube_icon.svg" alt="YouTube">
+            </a>
+            <!-- LinkedIn link -->
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page">
+                <img src="images/linkedin_icon.svg" alt="David Fajardo LinkedIn">
+            </a>
+        </div>
+        <div id="update">
+            <!---Last modified date--->
+            <div class="last_modified">
+                    <p>
+                    Last Modified: <span id="lastModified"></span>
+                    </p>
+            </div>
+            <!---Number of registered users-->
+            <div class="review_count">
+                <p>
+                    Number of registered users: <span id="review-count">0</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

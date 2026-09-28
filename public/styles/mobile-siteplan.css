@@ -1,0 +1,106 @@
+@media only screen and (max-width: 480px) {
+    body {
+        background-color:aqua
+    }
+    header {
+        padding: 1rem;
+        background-color:greenyellow;
+    }
+    header .heading #my-name{
+        font-size: 20px;
+    }
+    .heading img {
+        width: 50px;
+        height: 50px;
+        contain:content;
+    }
+    nav {
+        padding: 1rem;
+    }
+    #menu{  
+        display: flex;
+        position:relative;
+        top:0px;
+        left:10px;
+        z-index:3;
+        font-size:50px;
+        padding: .5rem .75rem;
+        color: #000;
+        font-weight:bold;
+    }
+    #menu::before {
+        content: "≡";
+    }
+    .nav-link {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .nav-link li {
+        display: none;
+    }
+    .nav-link li a{
+        display:block;
+        margin-top:40px;
+        height: 80px;
+        flex-direction: column;
+        background-color: yellow;
+        color:black;
+        font-size:25px;
+        font-weight:bold;
+        transition: background-color 0.5s;
+        margin-top:auto;
+        margin-bottom:auto;
+        margin-left:10px;
+        
+    }
+    nav .nav-link a:hover, nav .nav-link a:active {
+        background-color: rgba(255, 255, 255, 0.969);
+    }
+    .nav-link a.home {
+        background-color:yellow;
+    }
+    .nav-link a {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        padding:1em;
+        margin-top:auto;
+        margin-bottom:auto;
+        color: blue;
+    }
+    .nav-link a:hover {
+        background-color: rgba(255, 255, 255, 0.969);
+    }
+    .nav-link a.home {
+        background-color:yellow;
+    }
+    main {
+        display: grid;
+        grid-template-columns:1fr;
+        grid-row-start:2;
+        background-color: #f3f3f3;
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+    }
+    main #wireframe{
+        display:inline-block;
+        width:100%;
+        height:100%;
+    }
+     main #wireframe img{
+        display:inline-block;
+        object-fit:contain;
+        contain:content;
+        width:100%;
+        height:100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}

@@ -1,0 +1,349 @@
+@media screen and (min-width:481px) {
+    body{
+        width:60%;
+        background-color:rgba(238, 255, 192, 0.816);
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-left:auto;
+        margin-right:auto;
+        font-family: 'Roboto', Helvetica, sans-serif;
+    }
+    header{
+        display:flex;
+        width:100%;
+        height:200px;
+        background-color:rgba(192, 251, 255, 0.816);
+        color:black;
+        font-size:20px;
+        font-weight:bold;
+        margin-bottom:0px;
+    }
+    header img{
+        display:flex;
+        width:180px;
+        height:auto;
+        object-fit:fill;
+        margin-top:0;
+        margin-bottom:0;
+        padding:10px;
+    }
+    header h1{
+        display:flex;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:auto;
+        margin-bottom:auto;
+        padding-left:10px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    nav{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        height:50px;
+        background-color:yellow;
+        color:black;
+        margin-left:auto;
+        margin-right:20px;
+        margin-top:auto;
+        margin-bottom:auto;
+        font-size:20px;
+        font-weight:bold;
+    }
+    nav ul{
+        display:inline-flex;
+        list-style-type:none;
+        width:100%;
+        height:100%;
+    }
+    nav ul li{
+        display:inline-flex;
+        align-items:center;
+        width:100%;
+        height:50px;
+        background-color:yellow;
+        color:black;
+        font-size:20px;
+        font-weight:bold;
+        margin-bottom:0px;
+    }
+    nav ul li a{
+        display:inline-flex;
+        justify-content:space-around;
+        align-items:center;
+        width:100%;
+        height:50px;
+        text-decoration:none;
+    }
+    nav ul li a:hover{
+        color:rgb(236, 18, 26);
+    }
+    main{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        margin: 20px auto;    
+        width:100%;
+        height:auto;
+        background-color: #f3f3f3;
+        width: 100%;
+    }
+    main h2 {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:bold;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    main .card-1, .card-2, .card-3{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        border-style: solid;
+        border-width: 2px;
+        border-color: black;
+        height:auto;
+        height:auto;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    main .card-1 #card-1-text,
+        .card-2 #card-2-text,
+        .card-3 #card-3-text {
+        display:flex;
+        flex-direction:column;
+        width:50%;
+        margin-right: 10px;
+    }
+    main .card-1 #card-1-text h2,
+        .card-2 #card-2-text h2,
+        .card-3 #card-3-text h2 {
+        display:flex;
+        flex-direction:column;
+        font-size:35px;
+        font-weight:bold;
+        width:100%;
+        height:auto;
+        align-items:center;
+    }
+    main .card-1 #card-1-text p,
+        .card-2 #card-2-text p,
+        .card-3 #card-3-text p {
+        display:flex;
+        flex-direction:column;
+        text-align:justify;
+        margin-right:10px;
+        margin-left:10px;
+        padding-right:10px;
+        font-size:25px;
+        line-height:2;
+        font-weight:bold;
+        width:100%;
+        height:auto;
+        align-items:center;
+    }
+    main .card-1 #science,
+         .card-2 #Independence-day,
+         .card-3 #pickling {
+        display:flex;
+        flex-direction:row;
+        width:50%;
+        float:right;
+    }
+    main .card-1 #science img,
+        .card-2 #Independence-day img,
+        .card-3 #pickling img{
+        display:flex;
+        width:100%;
+        height:auto;
+        object-fit:contain;
+        overflow:hidden;
+        margin-left:10px;
+        margin-right:10px;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    main .card-4{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:10px;
+        margin-bottom:10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: black;
+        background-color: white;
+    }
+    main .card-4 h2{
+        width:100%;
+        height:auto;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom:10px;
+    }
+    main .card-4 #search-container{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:10px;
+    }
+    main .card-4 #search-container #search-input{
+        width:60%;
+        height:auto;
+        font-size:25px;
+        font-weight:bold;
+        margin-bottom:10px;
+        padding:10px;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    main .card-4 #search-container #search-button{
+        width:30%;
+        height:auto;
+        font-size:30px;
+        font-weight:bold;
+        margin-bottom:10px;
+        padding:10px;
+        border-radius: 10px;
+        border: 2px solid black;
+        background-color: aliceblue;
+        color: black;
+        cursor: pointer;
+    }
+    main .card-4 #search-container #results-container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    main .card-4 #search-container #search-button:hover{
+        background-color: rgb(21, 207, 231);
+    }
+     body footer {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        width: 100%;
+        height: auto;
+        background-color: rgba(160, 224, 158, 0.855);
+        color: black;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left:auto;
+        margin-right:auto;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-top:0px;
+    }
+    footer #flag-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    footer #flag-container #text {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    footer #flag-container #flag {
+        margin-left: auto;
+        margin-right: auto;
+        resize: both;
+        width: 200px;
+        height: auto;
+        margin-top:10px;
+        margin-bottom: 20px;
+    }
+    footer #flag-container img {
+        width: 180px;
+        height: auto;
+        object-fit: contain;
+    }
+    footer #social_media {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    footer #social_media a {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left:15px;
+        padding-right:15px;
+    }
+    footer #social_media img {
+        resize: both;
+        width: 80px;
+        height: auto;
+    }
+    footer #social_media img:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+    footer #update {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+    footer .last_modified {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left:15px;
+        text-align: center;
+    }
+    footer .last_modified p {
+        font-size: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+    }
+    footer .review_count {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left:15px;
+        text-align: center;
+    }
+    footer .review_count p {
+        font-size: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
