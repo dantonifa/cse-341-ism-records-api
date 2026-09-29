@@ -4,6 +4,7 @@ const app = express();
 const path = require("path");
 const initDb = require("./config/db");
 const recordsRoutes = require("./routes/records");
+const teachersRoutes = require("./routes/teachers");
 
 // --- SWAGGER DOCUMENTATION CONFIGURATION ---
 const swaggerUi = require("swagger-ui-express");
@@ -26,7 +27,7 @@ const swaggerOptions = {
     ],
   },
   // Scans your routes folder and specific records file for documentation specs
-  apis: ["./routes/*.js", "./routes/records.js"],
+  apis: ["./routes/*.js", "./routes/records.js", "./routes/teachers.js"],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serves HTML/CSS/JS f
 
 // Mount core application routers
 app.use("/records", recordsRoutes);
+app.use("/teachers", teachersRoutes);
 
 // Define operational Port environment
 const PORT = process.env.PORT || 3000;
