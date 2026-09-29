@@ -39,26 +39,69 @@ async function loadSingleRecord(studentId) {
 
     const student = await response.json();
 
-    // Generate student data display card using pure DOM creation
+    // Create a beautifully structured dashboard card using clean DOM generation
     const card = document.createElement("div");
     card.className = "record-card";
 
-    const title = document.createElement("h2");
-    title.textContent = `${student.name} (${student.studentId})`;
-    card.appendChild(title);
+    // 1. Header Section (Name and unique business ID)
+    const headerBlock = document.createElement("div");
+    headerBlock.className = "card-header-block";
 
-    const pCourse = document.createElement("p");
-    pCourse.textContent = `Course: ${student.course}`;
-    card.appendChild(pCourse);
+    const titleName = document.createElement("h2");
+    titleName.className = "card-student-name";
+    titleName.textContent = student.name;
+    headerBlock.appendChild(titleName);
 
-    const pGrades = document.createElement("p");
+    const subId = document.createElement("p");
+    subId.className = "card-student-id";
+    subId.textContent = `📋 Student ID: ${student.studentId}`;
+    headerBlock.appendChild(subId);
+    card.appendChild(headerBlock);
+
+    // 2. Metadata Grid (Course, Year, Grado, and Sección info labels)
+    const metaGrid = document.createElement("div");
+    metaGrid.className = "card-meta-grid";
+
+    const metaConfigs = [
+      { label: "Course", value: student.course },
+      { label: "Grado", value: student.grado ?? "N/A" },
+      { label: "Sección", value: student.seccion ?? "N/A" },
+      { label: "Año", value: student.year ?? "N/A" },
+    ];
+
+    metaConfigs.forEach((meta) => {
+      const item = document.createElement("div");
+      item.className = "meta-item";
+      item.innerHTML = `<strong>${meta.label}:</strong> ${meta.value}`;
+      metaGrid.appendChild(item);
+    });
+    card.appendChild(metaGrid);
+
+    // 3. Academic Performance Grid Table (P1 - P4 layout rows)
+    const gradesTable = document.createElement("table");
+    gradesTable.className = "card-grades-table";
+
+    const thead = document.createElement("thead");
+    const trHead = document.createElement("tr");
+    ["P1", "P2", "P3", "P4"].forEach((period) => {
+      const th = document.createElement("th");
+      th.textContent = period;
+      trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+    gradesTable.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    const trBody = document.createElement("tr");
     const g = student.grades || {};
-    pGrades.textContent = `Grades: P1=${g.parcial1 ?? 0}, P2=${g.parcial2 ?? 0}, P3=${g.parcial3 ?? 0}, P4=${g.parcial4 ?? 0}`;
-    card.appendChild(pGrades);
-
-    const pMeta = document.createElement("p");
-    pMeta.textContent = `Grado: ${student.grado ?? "N/A"} | Sección: ${student.seccion ?? "N/A"} | Año: ${student.year ?? "N/A"}`;
-    card.appendChild(pMeta);
+    [g.parcial1, g.parcial2, g.parcial3, g.parcial4].forEach((gradeVal) => {
+      const td = document.createElement("td");
+      td.textContent = gradeVal ?? 0;
+      trBody.appendChild(td);
+    });
+    tbody.appendChild(trBody);
+    gradesTable.appendChild(tbody);
+    card.appendChild(gradesTable);
 
     resultDisplay.appendChild(card);
   } catch (err) {
@@ -81,30 +124,78 @@ async function loadRecords() {
     if (!container) return;
 
     container.innerHTML = "";
+
+    // Recorremos la colección completa de estudiantes registrados en MongoDB
     records.forEach((r) => {
+      // Create a beautifully structured dashboard card using clean DOM generation
       const card = document.createElement("div");
       card.className = "record-card";
 
-      const h2 = document.createElement("h2");
-      h2.textContent = `${r.name} (${r.studentId})`;
-      card.appendChild(h2);
+      // 1. Header Section (Name and unique business ID)
+      const headerBlock = document.createElement("div");
+      headerBlock.className = "card-header-block";
 
-      const p1 = document.createElement("p");
-      p1.textContent = `Course: ${r.course}`;
-      card.appendChild(p1);
+      const titleName = document.createElement("h2");
+      titleName.className = "card-student-name";
+      titleName.textContent = r.name;
+      headerBlock.appendChild(titleName);
 
-      const p2 = document.createElement("p");
-      p2.textContent = `Grades: P1=${r.grades?.parcial1 ?? 0}, P2=${r.grades?.parcial2 ?? 0}, P3=${r.grades?.parcial3 ?? 0}, P4=${r.grades?.parcial4 ?? 0}`;
-      card.appendChild(p2);
+      const subId = document.createElement("p");
+      subId.className = "card-student-id";
+      subId.textContent = `📋 Student ID: ${r.studentId}`;
+      headerBlock.appendChild(subId);
+      card.appendChild(headerBlock);
 
-      const p3 = document.createElement("p");
-      p3.textContent = `Grado: ${r.grado ?? "N/A"} | Sección: ${r.seccion ?? "N/A"} | Año: ${r.year ?? "N/A"}`;
-      card.appendChild(p3);
+      // 2. Metadata Grid (Course, Year, Grado, and Sección info labels)
+      const metaGrid = document.createElement("div");
+      metaGrid.className = "card-meta-grid";
 
+      const metaConfigs = [
+        { label: "Course", value: r.course },
+        { label: "Grado", value: r.grado ?? "N/A" },
+        { label: "Sección", value: r.seccion ?? "N/A" },
+        { label: "Año", value: r.year ?? "N/A" },
+      ];
+
+      metaConfigs.forEach((meta) => {
+        const item = document.createElement("div");
+        item.className = "meta-item";
+        item.innerHTML = `<strong>${meta.label}:</strong> ${meta.value}`;
+        metaGrid.appendChild(item);
+      });
+      card.appendChild(metaGrid);
+
+      // 3. Academic Performance Grid Table (P1 - P4 layout rows)
+      const gradesTable = document.createElement("table");
+      gradesTable.className = "card-grades-table";
+
+      const thead = document.createElement("thead");
+      const trHead = document.createElement("tr");
+      ["P1", "P2", "P3", "P4"].forEach((period) => {
+        const th = document.createElement("th");
+        th.textContent = period;
+        trHead.appendChild(th);
+      });
+      thead.appendChild(trHead);
+      gradesTable.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      const trBody = document.createElement("tr");
+      const g = r.grades || {};
+      [g.parcial1, g.parcial2, g.parcial3, g.parcial4].forEach((gradeVal) => {
+        const td = document.createElement("td");
+        td.textContent = gradeVal ?? 0;
+        trBody.appendChild(td);
+      });
+      tbody.appendChild(trBody);
+      gradesTable.appendChild(tbody);
+      card.appendChild(gradesTable);
+
+      // Mount the fully constructed card tree inside the global responsive viewport wrapper
       container.appendChild(card);
     });
   } catch (err) {
-    console.error("Error loading records:", err);
+    console.error("Error loading records catalog:", err);
   }
 }
 
