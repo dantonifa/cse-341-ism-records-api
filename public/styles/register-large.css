@@ -1,62 +1,49 @@
 @media screen and (min-width:481px) {
     body{
-    width:60%;
-    background-color: #d3f2fd;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 0px;
-    padding-top: 0px;
-    margin-left:auto;
-    margin-right:auto;
+        width:60%;
+        background-color: #d3f2fd;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-left:auto;
+        margin-right:auto;
     }
-    header{
-        display:flex;
-        width:100%;
-        height:200px;
-        margin-top:auto;
-        margin-bottom:auto;
-        background-color: #00bcd4;
-        color:black;
-        font-size:25px;
-        text-align: center;
-    }
-    header img{
-        display:flex;
-        width:180px;
-        margin-top:auto;
-        margin-bottom:auto;
-        height:auto;
-        object-fit:fill;
-        margin: 0;
-        padding: 10px;
-    }
-    header h1{
-        display:flex;
-        justify-content:center;
-        flex-direction: column;
-        margin-top:auto;
-        margin-bottom:auto;
-        margin: 0;
-        padding: 10px;
-    }
-    nav{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        width:100%;
-        height:50px;
-        margin-top:auto;
-        margin-bottom:auto;
-        margin-right:20px;
-        background-color: yellow;
+    header{ 
+        display: flex;
+        align-items: center; /* Vertically centers the logo, title, and navigation links */
+        justify-content: space-between; /* Pushes identity to the left and navigation menu to the right */
+        width: 100%;
+        height: 120px; /* Streamlined from 200px for a more compact and elegant profile */
+        background-color: rgba(192, 251, 255, 0.816);
         color: black;
-        font-size:25px;
-        font-weight:bold;
+        padding: 0 20px;
+        box-sizing: border-box;
+    } 
+    header img {
+        height: 90px; /* Controls the institutional crest scaling safely */
+        width: auto;
+        object-fit: contain;
+        padding: 5px;
     }
-    nav ul{
-        display:inline-flex;
-        list-style-type:none;
-        width:100%;
-        height:100%;
+    header h1 {
+        font-size: 24px; /* Reduced layout footprint to prevent wrapping links to a new line */
+        font-weight: bold;
+        margin: 0;
+        padding-left: 15px;
+        line-height: 1.2;
+    }
+    /* Navigation container no longer competes for full width; aligns cleanly to the right */
+    header nav { 
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    nav ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        gap: 15px; /* Replaces problematic centimeter margins with a clean layout flex gap */
     }
     nav ul li{
         display:inline-flex;
@@ -64,17 +51,20 @@
         margin-left: auto;
         margin-right: auto;
     }
-    nav ul li a{
-        display:inline-flex;
-        justify-content:space-around;
-        align-items:center;
+    header nav ul li a { 
+        display: flex; 
+        align-items: center;
+        text-decoration: none;
         color: black;
-        font-size:25px;
-        font-weight:bold;
-        margin-right:30px;
+        font-size: 18px; /* Optimized scale to fit your complete navigation structure neatly */
+        font-weight: bold;
+        padding: 10px 15px; /* Creates comfortable clickable padding areas for users */
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
-    nav ul li a:hover{
-        background-color:rgb(83, 236, 18);
+    header nav ul li a:hover { 
+        background-color: rgba(59, 240, 23, 0.841); 
+        color: white; /* Inverts text color on hover states to maintain high visibility contrast */
     }
     main{
         display:flex;
