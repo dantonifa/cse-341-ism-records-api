@@ -258,7 +258,36 @@ body main {
     overflow: hidden; 
     font-size: 30px; 
   } 
-
+   /* Embedded styling for the scrollable menu layout */
+    .crud-menu-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  }
+    .crud-menu {
+    display: inline-flex;
+    gap: 15px;
+  }
+    .crud-btn {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+    .crud-btn:hover {
+    background-color: #003d82;
+  }
   main #records-container { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 

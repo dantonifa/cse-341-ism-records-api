@@ -23,11 +23,21 @@
     </header>
     <main>
         <h2>Student Records</h2>
+        
+        <!-- Scrollable CRUD Operation Menu -->
+        <div class="crud-menu-container">
+            <div class="crud-menu">
+                <button class="crud-btn" id="btn-get">🔍 Get Record by ID</button>
+                <button class="crud-btn" id="btn-create">➕ Create New Record</button>
+                <button class="crud-btn" id="btn-update">✏️ Update Record by ID</button>
+                <button class="crud-btn" id="btn-delete">❌ Delete Record by ID</button>
+            </div>
+        </div>
+
         <section id="records-container">
-        <!-- Records will be loaded here dynamically -->
+            <!-- Records or form fields will be loaded here dynamically -->
         </section>
     </main>
-
-  <script src="scripts/records.js"></script>
+    <script src="scripts/records.js"></script>
 </body>
 </html>
