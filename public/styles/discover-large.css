@@ -1,13 +1,13 @@
 @media screen and (min-width:481px) {
     body{
-        width:60%;
-        background-color:rgba(238, 255, 192, 0.816);
-        margin-top: 0px;
-        padding-top: 0px;
-        margin-left:auto;
-        margin-right:auto;
-        font-family: 'Roboto', Helvetica, sans-serif;
-    }
+        width:80%; 
+        background-color: rgba(238, 255, 192, 0.816);
+        font-family: 'Roboto', sans-serif; 
+        margin-top: 0px; 
+        padding-top: 0px; 
+        margin-left:auto; 
+        margin-right:auto; 
+    } 
     header{
         display: flex;
         align-items: center; /* Vertically centers the logo, title, and navigation links */
@@ -25,15 +25,12 @@
         object-fit: contain;
         padding: 5px;
     }
-    header h1{
-        display:flex;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:auto;
-        margin-bottom:auto;
-        padding-left:10px;
-        font-size: 35px;
+    header h1 {
+        font-size: 24px; /* Reduced layout footprint to prevent wrapping links to a new line */
         font-weight: bold;
+        margin: 0;
+        padding-left: 15px;
+        line-height: 1.2;
     }
     /* Navigation container no longer competes for full width; aligns cleanly to the right */
     header nav { 
