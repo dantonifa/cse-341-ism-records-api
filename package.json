@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install",
     "start": "node server.js",
-    "dev" : "node server.js"
+    "dev": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,10 @@
   "dependencies": {
     "dotenv": "^18.0.4",
     "express": "^5.2.1",
-    "mongoose": "^9.10.2"
+    "mongoose": "^9.10.2",
+    "swagger": "^0.7.5",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui": "^5.33.0",
+    "swagger-ui-express": "^5.0.1"
   }
 }
