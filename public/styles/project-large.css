@@ -258,35 +258,78 @@ body main {
     overflow: hidden; 
     font-size: 30px; 
   } 
-   /* Embedded styling for the scrollable menu layout */
-    .crud-menu-container {
+ /* Vertical Menu Container Wrapper */
+  .vertical-menu-container {
     width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    max-width: 320px;
+    margin: 20px 0;
+    font-family: inherit;
   }
-    .crud-menu {
-    display: inline-flex;
-    gap: 15px;
-  }
-    .crud-btn {
-    background-color: #0056b3;
+
+  /* Toggle Header Button */
+  .menu-toggle-btn {
+    width: 100%;
+    background-color: #0b5ed7;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-    .crud-btn:hover {
-    background-color: #003d82;
+
+  /* Vertical Scrollable Action List */
+  .vertical-menu-list {
+    display: none; /* Controlled via JavaScript */
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    margin-top: 5px;
+    max-height: 200px; /* Limits height to make it scrollable */
+    overflow-y: auto;   /* Enables vertical scrollbar if choices exceed max-height */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  /* Individual Vertical Menu Items */
+  .crud-vertical-btn {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f3f5;
+    transition: background-color 0.15s ease;
+  }
+
+  .crud-vertical-btn:last-child {
+      border-bottom: none;
+  }
+
+  .crud-vertical-btn:hover {
+      background-color: #f8f9fa;
+      color: #0b5ed7;
+  }
+
+  .crud-vertical-btn.active {
+      background-color: #e7f1ff;
+      color: #0a58ca;
+      font-weight: 600;
+  }
+
+  /* Workspace container layout */
+  #records-container {
+      display: none; 
+      margin-top: 25px;
+      width: 100%;
   }
   main #records-container { 
     display: grid; 
@@ -328,8 +371,8 @@ body main {
      would prevent the text (Course: Biología, etc.) from feeling crowded
      against the inner border line. */
     padding-left: 10px;
-  } 
-
+  }
+  
   body footer { 
     display: grid; 
     grid-template-columns:1fr 1fr 1fr; 
@@ -449,3 +492,105 @@ body main {
     text-align: center; 
   } 
 }
+/* Form Layout Containers */
+.form-wrapper {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  max-width: 500px;
+}
+
+.form-title {
+  margin-top: 0;
+  color: #0b5ed7;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Flex Row Elements */
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.form-col {
+  flex: 1;
+}
+
+.form-col input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Section Dividers */
+.section-subtitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 5px;
+}
+
+/* Grades Grid System */
+.grades-grid {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.grade-input-box {
+  display: block;
+  font-size: 12px;
+}
+
+.grade-input-box input {
+  width: 50px;
+  padding: 6px;
+}
+
+/* Form Action Trigger */
+.btn-submit-record {
+  padding: 10px 20px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Status Notifications */
+.status-message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.status-sending {
+  color: blue;
+}
+
+.status-success {
+  color: green;
+}
+
+.status-error {
+  color: red;
+}
+
+

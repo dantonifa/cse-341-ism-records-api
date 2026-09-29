@@ -197,4 +197,157 @@
         margin-top:10px;
         margin-bottom:10px;
     }
+        /* ==========================================================================
+       DYNAMIC CRUD WORKSPACE & VERTICAL MENU OVERRIDES
+       ========================================================================== */
+
+    /* Unlocks the vertical dropdown box visibility immediately when clicked */
+    .vertical-menu-list.open {
+        display: flex !important;
+    }
+
+    /* Mobile Responsive Base Layout for dynamic forms */
+    .form-wrapper {
+        padding: 15px;
+        background: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 15px;
+    }
+
+    .form-title {
+        margin-top: 0;
+        color: #0b5ed7;
+        font-size: 1.25rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px; /* Prevents unwanted auto-zoom on iOS and Android input touch focus */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Stacks complex row layouts vertically on cramped phone screens */
+    .form-row {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-col {
+        width: 100%;
+    }
+
+    .form-col label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-col input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .section-subtitle {
+        font-weight: bold;
+        margin: 15px 0 10px 0;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 5px;
+    }
+
+    /* Wraps grading blocks neatly so they do not clip on small display viewpoints */
+    .grades-grid {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .grade-input-box {
+        flex: 1;
+        min-width: 60px;
+    }
+
+    .grade-input-box label {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 3px;
+        text-align: center;
+    }
+
+    .grade-input-box input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Spans buttons full-width on mobile viewports for a native app feel */
+    .btn-submit-record {
+        width: 100%; 
+        padding: 12px;
+        background-color: #198754;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* Safe Deletion Prompt Styling layout blocks */
+    #delete-confirmation-box {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #fff3cd;
+        border: 1px solid #ffe69c;
+        border-radius: 6px;
+    }
+
+    #delete-warning-text {
+        color: #664d03;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    #btn-confirm-delete {
+        background-color: #dc3545 !important;
+    }
+
+    /* Dynamic feedback text alerts */
+    .status-message {
+        margin-top: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .status-sending { color: blue; }
+    .status-success { color: green; }
+    .status-error { color: red; }
+
 }

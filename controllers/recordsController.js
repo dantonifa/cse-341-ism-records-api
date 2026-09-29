@@ -1,76 +1,89 @@
+// Import your Mongoose model using your exact file naming and directory structure
 const Record = require("../models/record");
 
-// Get all records (filter dynamically by query params)
-exports.getAllRecords = async (req, res) => {
+// GET /records - Retrieve all student records from the database
+const getAllRecords = async (req, res) => {
   try {
-    const query = {};
-
-    // Loop through possible filter keys
-    const filterKeys = ["year", "course", "grado", "seccion"];
-    filterKeys.forEach((key) => {
-      if (req.query[key]) {
-        query[key] = req.query[key];
-      }
-    });
-
-    const records = await Record.find(query);
+    const records = await Record.find();
     res.status(200).json(records);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching records", error });
-    console.error("Error fetching records:", error);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error retrieving records", error: err.message });
   }
 };
 
-//Get one record by ID
-exports.getRecordById = async (req, res) => {
+// GET /records/:id - Find a specific student record using their unique business 'studentId'
+const getRecordById = async (req, res) => {
   try {
-    const record = await Record.findById(req.params.id);
-    if (!record) return res.status(404).json({ message: "Record not found" });
-    res.status(200).json(record);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching record", error: error });
-    console.error("Error fetching record:", error);
+    const student = await Record.findOne({ studentId: req.params.id });
+    if (!student)
+      return res.status(404).json({ message: "Student record not found" });
+    res.status(200).json(student);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error finding record", error: err.message });
   }
 };
 
-// Create a new record
-exports.createRecord = async (req, res) => {
+// POST /records - Create and store a brand new student profile
+const createRecord = async (req, res) => {
   try {
     const newRecord = new Record(req.body);
-    const savedRecord = await newRecord.save();
-    res.status(201).json(savedRecord);
-  } catch (error) {
-    res.status(400).json({ message: "Error creating record", error: error });
-    console.error("Error creating record:", error);
+    await newRecord.save();
+    res
+      .status(201)
+      .json({ message: "Record created successfully", data: newRecord });
+  } catch (err) {
+    res
+      .status(400)
+      .json({ message: "Error creating record", error: err.message });
   }
 };
 
-// Update a record by ID
-exports.updateRecord = async (req, res) => {
+// PUT /records/:id - Modify grades or metadata using the target studentId
+const updateRecord = async (req, res) => {
   try {
-    const updatedRecord = await Record.findByIdAndUpdate(
-      req.params.id,
+    const updatedStudent = await Record.findOneAndUpdate(
+      { studentId: req.params.id },
       req.body,
-      { new: true, runValidators: true },
+      { new: true, runValidators: true }, // Returns the newly modified document and applies Schema validation rules
     );
-    if (!updatedRecord)
-      return res.status(404).json({ message: "Record not found" });
-    res.status(200).json(updatedRecord);
-  } catch (error) {
-    res.status(400).json({ message: "Error updating record", error: error });
-    console.error("Error updating record:", error);
+    if (!updatedStudent)
+      return res.status(404).json({ message: "Student record not found" });
+    res
+      .status(200)
+      .json({ message: "Record updated successfully", data: updatedStudent });
+  } catch (err) {
+    res
+      .status(400)
+      .json({ message: "Error updating record", error: err.message });
   }
 };
 
-// Delete a record by ID
-exports.deleteRecord = async (req, res) => {
+// DELETE /records/:id - Completely remove an academic file using their studentId
+const deleteRecord = async (req, res) => {
   try {
-    const deletedRecord = await Record.findByIdAndDelete(req.params.id);
-    if (!deletedRecord)
-      return res.status(404).json({ message: "Record not found" });
-    res.status(200).json({ message: "Record deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ message: "Error deleting record", error: error });
-    console.error("Error deleting record:", error);
+    const deletedStudent = await Record.findOneAndDelete({
+      studentId: req.params.id,
+    });
+    if (!deletedStudent)
+      return res.status(404).json({ message: "Student record not found" });
+    res
+      .status(200)
+      .json({ message: "Record deleted successfully from the database" });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error deleting record", error: err.message });
   }
+};
+
+module.exports = {
+  getAllRecords,
+  getRecordById,
+  createRecord,
+  updateRecord,
+  deleteRecord,
 };
