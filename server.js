@@ -21,7 +21,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "https://onrender.com",
+        url: "https://cse-341-ism-records-api.onrender.com/api-docs",
         description: "Production Render Server",
       },
       {
